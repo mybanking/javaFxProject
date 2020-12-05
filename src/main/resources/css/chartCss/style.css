@@ -1,0 +1,121 @@
+.root {
+    -fx-font-family: Consolas, Herculanum, serif;
+}
+/* 修改图例的背景颜色和边框样式 */
+.chart-legend {
+    -fx-border-color: #333333;
+    -fx-border-radius: 3px;
+}
+/*修改图例中的文本颜色*/
+.chart-legend .label {
+    -fx-text-fill: #333333;
+}
+/* 修改图标标题的字体样式 */
+.chart-title {
+    -fx-text-fill: #333333;
+}
+.chart-pie-label, .chart-bar-label {
+    -fx-text-fill: #333333;
+}
+/* 改变柱图表数据节点的颜色 */
+.chart-bar, #lineChart, #areaChart, #stackedAreaChart, #bubbleChart, #scatterChart, #stackedBarChart {
+    CHART_COLOR_1: darkred;
+    CHART_COLOR_2: darkgreen;
+    CHART_COLOR_3: #020081ff;
+    CHART_COLOR_4: #330033ff;
+    CHART_COLOR_5: #bec100ff;
+    CHART_COLOR_6: #00a8a0ff;
+    CHART_COLOR_7: #80334dff;
+    CHART_COLOR_8: #ffccb3ff
+}
+.chart-bubble .label {
+    -fx-text-fill: red;
+}
+/* 改变x和y轴上面数值标示的颜色 */
+.axis {
+    /* 改变x和y轴数值标示的字体颜色 */
+    -fx-tick-label-fill: #1a1a1aff;
+    /* 改变x和y轴数值标示的字体类型和大小 */
+    -fx-tick-label-font: 9px Consolas;
+}
+/* 改变x和y轴名字的颜色 */
+.axis-label {
+    -fx-text-fill: #990000ff;
+    -fx-font-family: Consolas, "宋体", serif;
+}
+/* 修改tab的背景颜色和字体 */
+.tab {
+    -fx-background-color: white;
+    -fx-font-family: Consolas, "宋体", serif;
+}
+/* 为Tab插入背景图片作为logo */
+#lineChartTab {
+    -fx-background-image: url('../../img/chartIcon/LINE_CHART.jpg');
+    -fx-background-size: 20px 20px;
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+}
+/* 为Tab插入背景图片作为logo */
+#pieChartTab {
+    -fx-background-image: url('../../img/chartIcon/PIE_CHART.jpg');
+    -fx-background-size: 20px 20px;
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+}
+/* 为Tab插入背景图片作为logo */
+#barChartTab {
+    -fx-background-image: url('../../img/chartIcon/BUBBLE_CHART.jpg');
+    -fx-background-size: 20px 20px;
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+}
+/* 为Tab插入背景图片作为logo */
+#areaChartTab {
+    -fx-background-image: url('../../img/chartIcon/STACKED_AREA_CHART.jpg');
+    -fx-background-size: 20px 20px;
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+}
+/* 为Tab插入背景图片作为logo */
+#bubbleChartTab {
+    -fx-background-image: url('../../img/chartIcon/BUBBLE_CHART.jpg');
+    -fx-background-size: 20px 20px;
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+}
+/* 为Tab插入背景图片作为logo */
+#scatterChartTab {
+    -fx-background-image: url('../../img/chartIcon/SCATTER_CHART.jpg');
+    -fx-background-size: 20px 20px;
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+}
+/* 为Tab插入背景图片作为logo */
+#stackedAreaChartTab {
+    -fx-background-image: url('../../img/chartIcon/STACKED_AREA_CHART.jpg');
+    -fx-background-size: 20px 20px;
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+}
+/* 为Tab插入背景图片作为logo */
+#stackedBarChartTab {
+    -fx-background-image: url('../../img/chartIcon/STACKED_CHART.jpg');
+    -fx-background-size: 20px 20px;
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+}
+
+
+.tab-pane {
+    -fx-background-color: #ddddddff;
+}
+/* 子代选择器，Tab选中的时候修改Tab字体样式。 */
+.tab:selected .tab-label {
+    -fx-text-fill: darkred;
+}
+/* Tab选中的时候选中其边框并修改样式 */
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-radius: 0px;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-color: #e6e6e6;
+}

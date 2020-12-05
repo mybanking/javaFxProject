@@ -22,13 +22,17 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        //测试路径
         URL url=getClass().getResource("");
         System.out.println(url.toString());
+
+        //获取fxml
         Parent root = FXMLLoader.load(getClass().getResource("../fxml/MainView.fxml"));
         filesHandling.stage=stage;
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
+
         stage.setTitle("Text Editor by Red Ayoub");
         stage.show();
         stage.setOnCloseRequest((event)->{

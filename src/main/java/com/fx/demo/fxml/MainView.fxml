@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextArea?>
@@ -16,29 +16,40 @@
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="文件">
                     <items>
-                        <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#openF" text="Open" />
-                        <MenuItem fx:id="menuSave" mnemonicParsing="false" onAction="#save" text="Save" />
-                        <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#saveAs" text="Save as" />
-                        <MenuItem mnemonicParsing="false" onAction="#print" text="Print" />
-                        <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+                        <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#openF" text="打开" />
+                        <MenuItem fx:id="menuSave" mnemonicParsing="false" onAction="#save" text="保存" />
+                        <MenuItem fx:id="saveAsMenuItem" mnemonicParsing="false" onAction="#saveAs" text="另存为" />
+                        <MenuItem mnemonicParsing="false" onAction="#print" text="打印" />
+                        <MenuItem mnemonicParsing="false" onAction="#close" text="关闭" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu mnemonicParsing="false" text="编辑">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings" />
+                        <MenuItem mnemonicParsing="false" onAction="#settings" text="设置" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Search">
+                <Menu mnemonicParsing="false" text="查找">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#find" text="Find" />
-                        <MenuItem mnemonicParsing="false" onAction="#replace" text="Replace" />
+                        <MenuItem mnemonicParsing="false" onAction="#find" text="查找" />
+                        <MenuItem mnemonicParsing="false" onAction="#replace" text="替换" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="帮助">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="关于" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" onAction="#showChart" text="数据展示">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="折线图" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
                     </items>
                 </Menu>
             </menus>
@@ -46,10 +57,12 @@
                 <Insets left="1.0" />
             </padding>
         </MenuBar>
+<!--        <fx:include source="./ChartMainView.fxml"/>-->
     </top>
     <center>
         <JFXTextArea fx:id="textView" onKeyTyped="#textChanged" BorderPane.alignment="CENTER" />
     </center>
+
     <bottom>
         <VBox prefHeight="72.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>

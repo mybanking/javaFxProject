@@ -104,6 +104,11 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    private void showChart(){
+
+    }
+
+    @FXML
     private void openF(ActionEvent event) {
         FileChooser chooser=new FileChooser();
         chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text files", "*.txt"));
@@ -485,6 +490,8 @@ public class MainViewController implements Initializable {
         }
 
     }
+
+
 
 
 }

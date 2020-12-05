@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0"
+      prefWidth="797.0" xmlns="http://javafx.com/javafx/8.0.221" stylesheets="/css/chartCss/style.css">
+    <TabPane id="tabPane" prefHeight="484.0" prefWidth="797.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="   扇形图" id="pieChartTab" >
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="797.0">
+                <PieChart id="pieChart" layoutX="265.0" layoutY="15.0" prefWidth="250.0"/>
+            </AnchorPane>
+        </Tab>
+        <Tab text="   柱状图" id="barChartTab">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <BarChart id="barChart" layoutX="140.0" layoutY="15.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </BarChart>
+            </AnchorPane>
+        </Tab>
+        <Tab text="   折线图" id="lineChartTab">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <LineChart id="lineChart" layoutX="140.0" layoutY="15.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </LineChart>
+            </AnchorPane>
+        </Tab>
+        <Tab text="   面积图" id="areaChartTab">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AreaChart id="areaChart" layoutX="140.0" layoutY="15.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </AreaChart>
+            </AnchorPane>
+        </Tab>
+        <Tab text="   气泡图" id="bubbleChartTab">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <BubbleChart id="bubbleChart" layoutX="140.0" layoutY="15.0">
+                    <xAxis>
+                        <NumberAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </BubbleChart>
+            </AnchorPane>
+        </Tab>
+        <Tab text="   散布图" id="scatterChartTab">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <ScatterChart id="scatterChart" layoutX="140.0" layoutY="15.0">
+                    <xAxis>
+                        <NumberAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </ScatterChart>
+            </AnchorPane>
+        </Tab>
+        <Tab text="   堆叠面积图" id="stackedAreaChartTab">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <StackedAreaChart id="stackedAreaChart" layoutX="140.0" layoutY="15.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </StackedAreaChart>
+            </AnchorPane>
+        </Tab>
+        <Tab text="   堆叠柱状图" id="stackedBarChartTab">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <StackedBarChart id="stackedBarChart" layoutX="140.0" layoutY="15.0">
+                    <xAxis>
+                        <CategoryAxis side="BOTTOM"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis side="LEFT"/>
+                    </yAxis>
+                </StackedBarChart>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+</Pane>
