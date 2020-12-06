@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
 
 <BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fx.demo.controller.MainViewController">
     <top>
@@ -28,6 +30,9 @@
                 <Menu mnemonicParsing="false" text="编辑">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#settings" text="设置" />
+                        <MenuItem mnemonicParsing="false" onAction="#tableView" text="表格模板" />
+                        <MenuItem mnemonicParsing="false" onAction="#settings" text="编辑器模板" />
+                        <MenuItem mnemonicParsing="false" onAction="#ListView" text="列表模板" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="查找">
@@ -41,15 +46,9 @@
                         <MenuItem mnemonicParsing="false" onAction="#about" text="关于" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" onAction="#showChart" text="数据展示">
+                <Menu mnemonicParsing="false"  text="数据展示">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="折线图" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
-                        <MenuItem mnemonicParsing="false" onAction="#about" text="柱状图" />
+                        <MenuItem mnemonicParsing="false" onAction="#showChart" text="可视化图表" />
                     </items>
                 </Menu>
             </menus>
@@ -60,7 +59,12 @@
 <!--        <fx:include source="./ChartMainView.fxml"/>-->
     </top>
     <center>
-        <JFXTextArea fx:id="textView" onKeyTyped="#textChanged" BorderPane.alignment="CENTER" />
+        <HBox fx:id="centerPane">
+            <children>
+                <JFXTextArea fx:id="textView" onKeyTyped="#textChanged" BorderPane.alignment="CENTER" />
+            </children>
+        </HBox>
+
     </center>
 
     <bottom>

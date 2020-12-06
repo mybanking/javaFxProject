@@ -1,9 +1,15 @@
 package com.fx.demo.controller;
 
+import com.fx.demo.compents.MyTableView;
+import com.fx.demo.dao.Data1;
 import com.fx.demo.resources.filesHandling;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,19 +21,25 @@ import javafx.print.PrinterJob;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Callback;
+import javafx.util.StringConverter;
+import lombok.var;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -60,12 +72,18 @@ public class MainViewController implements Initializable {
     @FXML
     private Label msg;
 
+    @FXML
+    private HBox centerPane;
+
     filesHandling fh;
 
     private AnchorPane findPane;
     private AnchorPane replacePane;
 
     private VBox bottomPane;
+
+
+
     static FindThread findTh;
     Matcher matcher;
     ArrayList<FindInfoHolder> findInfosList;
@@ -103,8 +121,18 @@ public class MainViewController implements Initializable {
         SettingsFXMLController.applyPref();
     }
 
+    /**
+     * 展示图表
+     * @throws IOException
+     */
     @FXML
-    private void showChart(){
+    private void showChart(ActionEvent event) throws IOException {
+
+            centerPane.getChildren().clear();
+            System.out.println("333333");
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/ChartMainView.fxml"));
+            centerPane.getChildren().add(root);
+            System.out.println("333");
 
     }
 
@@ -131,6 +159,30 @@ public class MainViewController implements Initializable {
     private void saveAs(ActionEvent event) {
         filesHandling.file=null;
         filesHandling.save();
+    }
+
+    /**
+     * 表格模板
+     */
+    @FXML
+    private void tableView(){
+        centerPane.getChildren().clear();
+
+        Data1 data1=new Data1("1",1);
+        Data1 data2=new Data1("2",2);
+        Data1 data3=new Data1("3",3);
+
+        //加载数据
+        ObservableList<Data1> observableList=FXCollections.observableArrayList();
+        observableList.add(data3);
+        observableList.add(data1);
+        observableList.add(data2);
+
+        //创建表
+        MyTableView myTableView=new MyTableView(observableList);
+
+
+        centerPane.getChildren().add(myTableView.getTableView());
     }
 
     @FXML
@@ -399,6 +451,71 @@ public class MainViewController implements Initializable {
         }
         msg.setStyle("-fx-text-fill:#ff0000");
         msg.setText("No matches");
+    }
+
+    /**
+     * listView 模板
+     * @param actionEvent
+     */
+    public void ListView(ActionEvent actionEvent) {
+        //清除pane
+        centerPane.getChildren().clear();
+
+        //数据源
+        ObservableList<String> observableList= FXCollections.observableArrayList();
+        observableList.add("1111");
+        observableList.add("2222");
+        observableList.add("1333");
+        observableList.add("155");
+        observableList.add("6");
+        observableList.add("171");
+        observableList.add("1111");
+        observableList.add("1111");
+
+        //渲染
+        ListView listView=new ListView(observableList);
+
+        //可多选
+        listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+        //监听器选中的值
+        listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                System.out.println(oldValue+"   "+ newValue);
+            }
+        });
+
+        //监听器选中的索引
+        listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                System.out.println(oldValue+"   "+ newValue);
+            }
+        });
+
+        //可编辑
+        listView.setEditable(true);
+        //listView.setCellFactory(TextFieldListCell.forListView());
+        //回调函数
+        Callback<ListView<String>, ListCell<String>> call=TextFieldListCell.forListView(new StringConverter<String>() {
+            @Override
+            public String toString(String object) {
+                return object;
+            }
+
+            @Override
+            public String fromString(String string) {
+                return string+"new";
+            }
+        });
+        listView.setCellFactory(call);
+
+
+
+
+        centerPane.getChildren().add(listView);
     }
 
 

@@ -71,4 +71,6 @@ public class ChartMain extends Application{
         primaryStage.setScene(new Scene(root, 797, 484));
         primaryStage.show();
     }
+
+
 }

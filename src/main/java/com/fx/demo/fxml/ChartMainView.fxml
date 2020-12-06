@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0"
       prefWidth="797.0" xmlns="http://javafx.com/javafx/8.0.221" stylesheets="/css/chartCss/style.css">
-    <TabPane id="tabPane" prefHeight="484.0" prefWidth="797.0" tabClosingPolicy="UNAVAILABLE">
+    <TabPane id="tabPane" prefHeight="484.0" prefWidth="797.0" tabClosingPolicy="UNAVAILABLE" side="RIGHT">
         <Tab text="   扇形图" id="pieChartTab" >
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="797.0">
                 <PieChart id="pieChart" layoutX="265.0" layoutY="15.0" prefWidth="250.0"/>
